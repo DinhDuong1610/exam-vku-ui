@@ -1,4 +1,4 @@
-.table-content {
+/* .table-content {
 	max-width: 100%;
 	margin: 0 auto;
 	margin-bottom: 30px;
@@ -10,17 +10,46 @@
 	border: 1px solid var(--color-white);
 	background: white;
 	overflow-x: auto;
+} */
+
+.table-content {
+	width: 100%;
+	/* <-- Sửa thành 100% */
+	box-sizing: border-box;
+	/* Nên thêm để width 100% tính cả padding */
+	margin-bottom: 30px;
+	padding: 15px;
+	border-radius: var(--border-radius-low);
+	box-shadow: 0px 0px 10px var(--color-shadow);
+	border: 1px solid var(--color-white);
+	background: white;
+	overflow-x: auto;
+	/* Giữ lại để cuộn ngang nếu table quá rộng */
 }
 
-.main {
+/* .main {
 	display: block;
 	width: fit-content;
 	height: fit-content;
 	border-collapse: collapse;
+} */
+
+.main {
+	display: table;
+	/* <-- Trả về giá trị mặc định, đúng chuẩn */
+	width: 100%;
+	/* <-- Sửa thành 100% */
+	border-collapse: collapse;
+	table-layout: fixed;
+	/* <-- Rất quan trọng: Giúp các cột giữ đúng kích thước */
 }
 
-.main>tbody {
+/* .main>tbody {
 	width: fit-content;
+} */
+
+.main th {
+	text-align: left;
 }
 
 .main>tbody>tr,
